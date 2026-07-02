@@ -17,7 +17,7 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     	http
-                .formLogin(Customizer.withDefaults())
+                //.formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults())
                 .addFilterBefore(new CustomAuthenticationFilter(), BasicAuthenticationFilter.class)
                 .authenticationManager(new CustomAuthenticationManager(List.of(new CustomUserAuthenticationProvider(), new CustomAdminAuthenticationProvider(), new CustomAuthenticationProvider())))
